@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>Linux常用命令汇总 | 黄功涞的个人博客</title>
+  <meta name="description" content="Docker 命令镜像操作1.启动与停止123456# 启动docker$ sudo service docker start# 重启docker$ sudo service docker restart# 停止docker$ sudo service docker stop  2.查看镜像列表12345678$ sudo docker image ls# 注释：* REPOSITORY：镜像所在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令汇总">
+<meta property="og:url" content="http://yoursite.com/essay/cjzqpxpqu00024g6xk6xutb92.html">
+<meta property="og:site_name" content="黄功涞的个人博客">
+<meta property="og:description" content="Docker 命令镜像操作1.启动与停止123456# 启动docker$ sudo service docker start# 重启docker$ sudo service docker restart# 停止docker$ sudo service docker stop  2.查看镜像列表12345678$ sudo docker image ls# 注释：* REPOSITORY：镜像所在">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-25T00:23:48.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用命令汇总">
+<meta name="twitter:description" content="Docker 命令镜像操作1.启动与停止123456# 启动docker$ sudo service docker start# 重启docker$ sudo service docker restart# 停止docker$ sudo service docker stop  2.查看镜像列表12345678$ sudo docker image ls# 注释：* REPOSITORY：镜像所在">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/essay/cjzqpxpqu00024g6xk6xutb92.html">
+  
+    <link rel="alternate" href="/atom.xml" title="黄功涞的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/gonglai" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">黄功涞</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">人生苦短，我用Python</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-relax">
+          <a href="/relaxies">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">放松一下</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/gonglai" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/essay/">个人随笔</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Magento/">建站</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/essay/">个人随笔</a>
+              </p>
+              <p class="item-title">
+                <a href="/essay/cjzqpxpqu00024g6xk6xutb92.html" class="title">Linux常用命令汇总</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-08-24T23:46:21.000Z" itemprop="datePublished">2019-08-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/essay/">个人随笔</a>
+              </p>
+              <p class="item-title">
+                <a href="/essay/cjzqpxpqh00004g6xyrgx0wr7.html" class="title">Git常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-08-24T12:32:14.000Z" itemprop="datePublished">2019-08-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Magento/">建站</a>
+              </p>
+              <p class="item-title">
+                <a href="/Magento/cjzqpxpr700074g6xklqpzgmv.html" class="title">添加背景效果（点击鼠标显示红心并浮现社会主义核心价值观）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-08-22T10:23:54.000Z" itemprop="datePublished">2019-08-22</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/essay/">个人随笔</a>
+              </p>
+              <p class="item-title">
+                <a href="/essay/cjzqpxpr300054g6xo4genvj2.html" class="title">xshell / Linux终端字体配色方案</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-08-21T11:43:14.000Z" itemprop="datePublished">2019-08-21</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Linux常用命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux常用命令汇总
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/essay/cjzqpxpqu00024g6xk6xutb92.html" class="article-date">
+	  <time datetime="2019-08-24T23:46:21.000Z" itemprop="datePublished">2019-08-25</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/essay/">个人随笔</a>
+  </span>
+
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/essay/cjzqpxpqu00024g6xk6xutb92.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 835(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="Docker-命令"><a href="#Docker-命令" class="headerlink" title="Docker 命令"></a>Docker 命令</h1><h3 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h3><h4 id="1-启动与停止"><a href="#1-启动与停止" class="headerlink" title="1.启动与停止"></a>1.启动与停止</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动docker</span></span><br><span class="line">$ sudo service docker start</span><br><span class="line"><span class="comment"># 重启docker</span></span><br><span class="line">$ sudo service docker restart</span><br><span class="line"><span class="comment"># 停止docker</span></span><br><span class="line">$ sudo service docker stop</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查看镜像列表"><a href="#2-查看镜像列表" class="headerlink" title="2.查看镜像列表"></a>2.查看镜像列表</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker image ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注释：</span></span><br><span class="line">* REPOSITORY：镜像所在的仓库名称 </span><br><span class="line">* TAG：镜像标签 </span><br><span class="line">* IMAGEID：镜像ID </span><br><span class="line">* CREATED：镜像的创建日期(不是获取该镜像的日期) </span><br><span class="line">* SIZE：镜像大小</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-创建镜像"><a href="#3-创建镜像" class="headerlink" title="3.创建镜像"></a>3.创建镜像</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从官方拉取镜像</span></span><br><span class="line">$ sudo docker image pull 镜像名称 或者 sudo docker image pull library/镜像名称</span><br><span class="line">$ sudo docker image pull ubuntu 或者 sudo docker image pull library/ubuntu</span><br><span class="line">$ sudo docker image pull ubuntu:<span class="number">16.04</span> 或者 sudo docker image pull library/ubuntu:<span class="number">16.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取个人镜像</span></span><br><span class="line">$ sudo docker image pull 仓库名称/镜像名称</span><br><span class="line">$ sudo docker image pull itcast/fastdfs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压本地镜像</span></span><br><span class="line">$ sudo docker load -i 文件路径/镜像名称(文件尾缀也要带上)</span><br><span class="line">$ sudo docker load -i 文件路径/fastdfs_docker.tar</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-删除镜像"><a href="#4-删除镜像" class="headerlink" title="4.删除镜像"></a>4.删除镜像</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker image rm 镜像名或镜像ID</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker容器操作"><a href="#Docker容器操作" class="headerlink" title="Docker容器操作"></a>Docker容器操作</h3><h4 id="1-查看容器"><a href="#1-查看容器" class="headerlink" title="1.查看容器"></a>1.查看容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看正在运行的容器</span></span><br><span class="line">$ sudo docker container ls</span><br><span class="line"><span class="comment"># 查看所有的容器</span></span><br><span class="line">$ sudo docker container ls --all</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-创建容器"><a href="#2-创建容器" class="headerlink" title="2.创建容器"></a>2.创建容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run [option] 镜像名 [向启动容器中传入的命令]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 常用可选参数说明：</span></span><br><span class="line">* -i 表示以《交互模式》运行容器。</span><br><span class="line">* -t 表示容器启动后会进入其命令行。加入这两个参数后，容器创建就能登录进去。即分配一个伪终端。</span><br><span class="line">* --name 为创建的容器命名。</span><br><span class="line">* -v 表示目录映射关系，即宿主机目录:容器中目录。注意:最好做目录映射，在宿主机上做修改，然后共享到容器上。 </span><br><span class="line">* -d 会创建一个守护式容器在后台运行(这样创建容器后不会自动登录容器)。</span><br><span class="line">* -e 在启动容器时传递环境变量及其值</span><br><span class="line">* -p 表示端口映射，即宿主机端口:容器中端口。</span><br><span class="line">* --network=host 表示将主机的网络环境映射到容器中，使容器的网络与主机相同。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line">$ sudo docker run -dit --name tracker --network=host -v /var/fdfs/tracker:/var/fdfs delron/fastdfs tracker</span><br><span class="line">$ sudo docker run -dti --name storage --network=host -e TRACKER_SERVER=<span class="number">192.168</span><span class="number">.103</span><span class="number">.210</span>:<span class="number">22122</span> -v /var/fdfs/storage:/var/fdfs delron/fastdfs storage</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-启动和停止容器"><a href="#3-启动和停止容器" class="headerlink" title="3.启动和停止容器"></a>3.启动和停止容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动容器</span></span><br><span class="line">$ sudo docker container start 容器名或容器id</span><br><span class="line"><span class="comment"># 停止容器</span></span><br><span class="line">$ sudo docker container stop 容器名或容器id</span><br><span class="line"><span class="comment"># kill掉容器</span></span><br><span class="line">$ sudo docker container kill 容器名或容器id</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-删除容器"><a href="#4-删除容器" class="headerlink" title="4.删除容器"></a>4.删除容器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker container rm 容器名或容器id</span><br><span class="line"><span class="comment"># 正在运行的容器无法直接删除，需要先停止容器。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-容器制作成镜像"><a href="#5-容器制作成镜像" class="headerlink" title="5.容器制作成镜像"></a>5.容器制作成镜像</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将容器制作成镜像</span></span><br><span class="line">$ sudo docker commit 容器名 镜像名</span><br><span class="line"><span class="comment"># 镜像打包备份</span></span><br><span class="line">$ sudo docker save -o 保存的文件名 镜像名</span><br><span class="line"><span class="comment"># 镜像解压</span></span><br><span class="line">$ sudo docker load -i 文件路径/备份文件</span><br></pre></td></tr></table></figure>
+
+<h1 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h1><h3 id="一、创建虚拟环境"><a href="#一、创建虚拟环境" class="headerlink" title="一、创建虚拟环境"></a>一、创建虚拟环境</h3><h5 id="1-安装虚拟环境包"><a href="#1-安装虚拟环境包" class="headerlink" title="1. 安装虚拟环境包"></a>1. 安装虚拟环境包</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install virtualenv</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-安装虚拟环境扩展包"><a href="#2-安装虚拟环境扩展包" class="headerlink" title="2. 安装虚拟环境扩展包"></a>2. 安装虚拟环境扩展包</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install virtualenvwrapper  <span class="comment"># 目的:使用更加简单的命令来管理虚拟环境</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二、常用虚拟环境命令"><a href="#二、常用虚拟环境命令" class="headerlink" title="二、常用虚拟环境命令"></a>二、常用虚拟环境命令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv -p python3 虚拟环境名称  <span class="comment"># 创建虚拟环境</span></span><br><span class="line">workon 两次tab键  <span class="comment"># 查看所有虚拟环境</span></span><br><span class="line">workon 虚拟环境名称  <span class="comment"># 进入虚拟环境</span></span><br><span class="line">rmvirtualenv 虚拟环境名称  <span class="comment"># 删除虚拟环境</span></span><br><span class="line">deactivate  <span class="comment"># 退出虚拟环境</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pip3 --version  # 判断pip3是依赖哪个python版本的</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/essay/cjzqpxpqu00024g6xk6xutb92.html" title="Linux常用命令汇总" target="_blank" rel="external">http://yoursite.com/essay/cjzqpxpqu00024g6xk6xutb92.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/gonglai" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/gonglai" target="_blank"><span class="text-dark">黄功涞</span><small class="ml-1x">人生苦短，我用Python</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/essay/cjzqpxpqh00004g6xyrgx0wr7.html" title="Git常用命令"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/gonglai" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/love-click.js"></script>
+</body>
+</html>
